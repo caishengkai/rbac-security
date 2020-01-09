@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csk.rbac.system.dao.PermissionMapper">
+  <resultMap id="BaseResultMap" type="com.csk.rbac.system.model.Permission">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="PERMISSION_ID" jdbcType="BIGINT" property="permissionId" />
+    <result column="PARENT_ID" jdbcType="BIGINT" property="parentId" />
+    <result column="PERMISSION_NAME" jdbcType="VARCHAR" property="permissionName" />
+    <result column="URL" jdbcType="VARCHAR" property="url" />
+    <result column="ICON" jdbcType="VARCHAR" property="icon" />
+    <result column="TYPE" jdbcType="CHAR" property="type" />
+    <result column="ORDER_NUM" jdbcType="BIGINT" property="orderNum" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="MODIFY_TIME" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="PERMS" jdbcType="LONGVARCHAR" property="perms" />
+  </resultMap>
+
+  <select id="findUserPermissions" parameterType="long" resultMap="BaseResultMap">
+    select  p.perms from t_user u
+    left join t_user_role ur on u.user_id=ur.user_id
+    left join t_role_permission rp on rp.role_id=rp.role_id
+    left join t_permission p on p.permission_id=rp.permission_id
+    where u.username = #{username}
+  </select>
+</mapper>
