@@ -6,5 +6,7 @@ import com.csk.rbac.system.model.Permission;
 import java.util.List;
 
 public interface PermissionMapper extends BaseMapper<Permission> {
-    List<Permission> findUserPermissions(Long userId);
+    List<String> findUserPermissions(Long userId);
+
+    List<Permission> getUserMenu(String userName);
 }

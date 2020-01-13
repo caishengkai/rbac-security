@@ -79,7 +79,7 @@ function formLogin() {
         success: function (r) {
             if (r.status === 0) {
                 $form[0].reset();
-                location.href = ctx + 'index2';
+                location.href = ctx + 'index';
             } else {
                 if (r.msg !== '验证码不能为空！') reloadCode();
                 $MB.n_warning(r.msg);

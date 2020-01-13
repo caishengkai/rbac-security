@@ -93,9 +93,9 @@ $(window).on("load", function () {
             ul.hide(300);
         })
     };
-    $.post(ctx + "menu/getUserMenu", {"userName": userName}, function (r) {
-        if (r.code === 0) {
-            var data = r.msg;
+    $.post(ctx + "user/getUserMenu", {"userName": userName}, function (r) {
+        if (r.status === 0) {
+            var data = r.data;
             var $crollbarInner = $(".scrollbar-inner");
             document.getElementById("navigation").innerHTML = forTree(data.children);
             menuTree();

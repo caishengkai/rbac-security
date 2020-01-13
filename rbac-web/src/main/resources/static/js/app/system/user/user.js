@@ -50,7 +50,7 @@ $(function () {
                 else return '保密';
             }
         }, {
-            field: 'crateTime',
+            field: 'createTime',
             title: '创建时间'
         }, {
             field: 'status',

@@ -22,4 +22,11 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements IUserServi
         List<User> list = this.selectByExample(example);
         return list.isEmpty() ? null : list.get(0);
     }
+
+    @Override
+    public List<User> findAllUser(User user) {
+        Example example = new Example(User.class);
+        example.setOrderByClause("create_time");
+        return this.selectByExample(example);
+    }
 }

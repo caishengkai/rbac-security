@@ -53,8 +53,8 @@ public class User {
     /**
      * 创建时间
      */
-    @Column(name = "CRATE_TIME")
-    private Date crateTime;
+    @Column(name = "CREATE_TIME")
+    private Date createTime;
 
     /**
      * 修改时间
@@ -221,19 +221,19 @@ public class User {
     /**
      * 获取创建时间
      *
-     * @return CRATE_TIME - 创建时间
+     * @return CREATE_TIME - 创建时间
      */
-    public Date getCrateTime() {
-        return crateTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
      * 设置创建时间
      *
-     * @param crateTime 创建时间
+     * @param createTime 创建时间
      */
-    public void setCrateTime(Date crateTime) {
-        this.crateTime = crateTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**

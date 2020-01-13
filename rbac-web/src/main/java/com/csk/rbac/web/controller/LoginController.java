@@ -57,14 +57,14 @@ public class LoginController {
         return "login";
     }
 
-    @GetMapping("index2")
+    @GetMapping("index")
     public String index(Authentication authentication, Model model) {
         model.addAttribute("user",authentication.getPrincipal());
-        return "index2";
+        return "index";
     }
 
     @GetMapping("/")
     public void success(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        redirectStrategy.sendRedirect(request, response, "/index2");
+        redirectStrategy.sendRedirect(request, response, "/index");
     }
 }
