@@ -9,29 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.csk.rbac</groupId>
     <artifactId>rbac-web</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <groupId>com.csk.rbac</groupId>
             <artifactId>rbac-system</artifactId>
-            <version>${rbac.version}</version>
         </dependency>
 
-        <!-- tomcat -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-web</artifactId>
         </dependency>
-        <!-- thymeleaf -->
+
+        <!--引入thymeleaf依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        <!-- spring security4 thymeleaf方言 -->
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
         </dependency>
     </dependencies>
 </project>
